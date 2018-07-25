@@ -1,0 +1,116 @@
+#header_slide{
+	width: 100%;
+	height: 100vh;
+	background-color: lightgreen;
+}
+.header_slide_container{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+}
+.header_slide_item{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;		
+}
+.header_slide_bg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+
+}
+.header_slide_case{
+	width: 250px;
+	height: 400px;
+	position: absolute;
+	right: 50%;
+	top: 50%;
+	transform: translateY(-50%) translateX(50%);
+	border: 5px solid black;
+	z-index: 2;
+}
+
+.header_slide_text_container{
+	width: 300px;
+	position: absolute;
+	top: 100px;
+	left: 50%;	
+	-webkit-transform: translateX(-50%);
+	-ms-transform: translateX(-50%);
+	-o-transform: translateX(-50%);
+	transform: translateX(-50%);
+	z-index: 2;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.header_slide_title{
+	font-size: 25px;
+	line-height: 30px;
+	color: white;
+	font-weight: 800;
+	text-transform: uppercase;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+.header_slide_title span{
+	color: aqua;
+}
+.header_slide_text{
+	padding: 10px;
+	margin-bottom: 30px;
+	color: white;
+}
+.header_slide_button{
+	width: 200px;
+	padding: 20px;
+	text-align: center;
+	background-color: pink;
+	-webkit-box-shadow: 17px 10px 26px -4px rgba(0,0,0,0.75);
+	-moz-box-shadow: 17px 10px 26px -4px rgba(0,0,0,0.75);
+	box-shadow: 17px 10px 26px -4px rgba(0,0,0,0.75);
+	border-radius: 25%;
+	margin: 20px auto;
+	position: relative;
+	display: block;
+	text-transform: uppercase;
+	font-weight: 500;  
+}
+@media screen and (min-width : 480px){
+	.header_slide_text_container{
+		width: 400px;
+		position: absolute;
+		top: 50%;
+		left: 10%;		
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		z-index: 2;
+	}
+	.header_slide_title{
+		font-size: 60px;
+		line-height: 60px;
+		text-align: left;
+	}
+	.header_slide_case{
+		width: 250px;
+		height: 400px;
+		position: absolute;
+		right: 100px;
+		top: 50%;
+		-webkit-transform: translateY(-50%);
+		-ms-transform: translateY(-50%);
+		-o-transform: translateY(-50%);
+		transform: translateY(-50%);
+		border: 5px solid black;
+		z-index: 2;
+	}
+}
