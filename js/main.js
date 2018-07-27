@@ -10,10 +10,15 @@ var rw={
 		this.timer = null;
 		this.onAuto = true;
 		this.timeBetweenAnimations= 2000;
+		this.initialPanX = 0;
+		/** Pan Direction back(-1) or next(+1) */
+		this.panDir: '-1' | '+1';
+		/** Pan Timeline */
+		this.activeTl: SliderTimeline;
+
 		this.cacheElements();		
 		this.bind();
 		this.init();
-		
 	},
 
 	cacheElements(){
@@ -23,7 +28,7 @@ var rw={
 		this.$nav_right= $(".slider_nav_right",this.$container);
 		this.$slider_container= $(".slider_mask",this.$container);
 		this.$board_left= $(".board_left",this.$container);
-		
+		this.slides=$("#header_slide")[0];
 		return this;
 	},
 	bind(){
@@ -38,7 +43,15 @@ var rw={
 			that.goRight();
 		});
 
-		
+		// $slides
+		this.slides
+		    .on('dragstart', e => e.preventDefault());
+		// $container
+		this.slides
+		    .hammer()
+		    .on('panstart', this.onPanStart(e))
+		    .on('pan',this.onPan(e))
+		    .on('panend',this.onPanEndHandler())
 		// $(".slider_nav_right").on("click touchstart",function(event){
 		// 	event.preventDefault();
 		// 	that.goRight();
@@ -50,6 +63,93 @@ var rw={
 		
 		
 	},
+	setPanTimeline(dir) {
+        // Set pan properties
+        this.panDir = dir;
+        this.activeTl = <SliderTimeline>this.gotoHandler(dir);
+        // Pause timeline, pan event will update its progress
+        this.activeTl.pause(0);
+        return this.activeTl;
+    },
+    onPanStart(e) {
+        /** Pan start delta X */
+        this.initialPanX = e.gesture.deltaX;
+    },
+    onPan(e) {
+        // If slider is locked return
+        if (this.lock) return;
+
+        const { $container } = this.opts;
+
+        /** Normalized delta x */
+        const x = (this.initialPanX - e.gesture.deltaX) / $container.width();
+
+        // x needs to be greater or less than 0 to define direction
+        if (x == 0) return;
+
+        /** Current direction back(-1) or next(+1) */
+        const dir: '-1' | '+1' = x < 0 ? '-1' : '+1';
+
+        // Initial timeline setup
+        if (!this.activeTl) {
+            this.setPanTimeline(dir);
+        }
+        // Swap timeline on direction change
+        else if (this.panDir !== dir) {
+            if (this.activeTl.progress() > 0) {
+                this.activeTl.pause(0);
+            }
+
+            // Since last timeline didn't get to complete: undo last css class update
+            this.pushActiveSlide(dir === '+1');
+
+            this.setPanTimeline(dir);
+        }
+
+        // Control current timeline with normalized delta x
+        this.activeTl.progress(Math.abs(x));
+    },
+
+    onPanEndHandler() {
+        const { panTimeScale, panDistanceLimit } = this.opts;
+        const activeTl = this.activeTl;
+
+        if (activeTl) {
+            // Lock slider from this point, it will be unlocked
+            // on transition events 'onComplete' or 'onReverseComplete',
+            // check super.gotoHandler method
+            this.lock = true;
+
+            if (activeTl.progress() > panDistanceLimit) {
+                // If progress passed the distance limit resume animation
+                activeTl.resume()
+            }
+            else {
+                // If progress hasn't passed the distance limit reverse animation 
+                activeTl.reverse();
+            }
+            // Apply panTimeScale
+            activeTl.timeScale(panTimeScale);
+        }
+    },
+
+    onTransitionComplete(input) {
+        super.onTransitionComplete(input);
+        // Reset props
+        this.initialPanX = 0;
+        this.panDir = undefined;
+    },
+
+    onTransitionReverseComplete(input) {
+        // Undo css state classes change...
+        this.pushActiveSlide(input.direction === 'back');
+        // ...and unlock slider
+        this.lock = false;
+        // Reset props
+        this.initialPanX = 0;
+        this.panDir = undefined;
+        this.activeTl = undefined;
+    },
 	init(){
 		
 		screen_size = $( window ).width();
