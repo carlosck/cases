@@ -18,7 +18,10 @@
 	top: 0;
 	opacity: 0;
 }
-.header_slide_item.is-selected
+.header_slide_item:nth-child(0){
+	background-color: red;
+}
+.header_slide_item.slider__item--active
 {
 	opacity: 1;
 }
