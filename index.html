@@ -5,6 +5,7 @@
 	<link rel="stylesheet" href="css/libs/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/slide.css">
+	<link rel="stylesheet" href="css/crear.css">
 </head>
 <body>
 	<div id="full_container">
@@ -16,7 +17,7 @@
 			</ul>
 		</div>
 		<div id="stage">
-			<div class="section section_active" id="main_slide">
+			<div class="section section_activse" id="main_slide">
 				<div id="header_slide">
 					<div class="header_slide_container">
 						<div class="slider_mask">
@@ -69,6 +70,161 @@
 					</div>
 				</div>
 			</div>
+			<div class="section section-active" id="section_crear">
+				<div class="crear_form_container">
+					<label for="crear_brand">
+						<select name="crear_brand" id="crear_brand" class="crear_brand">
+							<option value="-1" selected>Selecciona una Marca</option>
+							<option value="54545">Iphone</option>
+							<option value="54545">Samsung</option>
+							<option value="54545">Sony</option>
+							<option value="54545">Google</option>
+						</select>
+						<span class="error">Escoge una marca</span>
+					</label>
+					<label for="crear_model">
+						<select name="crear_model" id="" class="crear_model">
+							<option value="-1" selected>Selecciona un modelo</option>
+							<option value="54545">Iphone 2</option>
+							<option value="54545">Iphone 3</option>
+							<option value="54545">Iphone 4</option>
+							<option value="54545">Iphone 5</option>
+						</select>
+						<span class="error">Escoge un modelo</span>
+					</label>
+					<label for="crear_type">
+						<select name="crear_type" id="" class="crear_type">
+							<option value="-1" selected>Tipo de carcasa</option>
+							<option value="54545">laser</option>
+							<option value="54545">Relieve</option>
+						</select>
+						<span class="error">Escoge un modelo</span>
+					</label>
+				</div>
+				<div class="crear_gallery_section">
+					<div class="crear_gallery_selector">
+						<label for="crear_gallery">
+							<select name="crear_gallery" id="" class="crear_gallery--select">
+								<option value="-1" selected>Galerias</option>
+								<option value="54545">Viajes</option>
+								<option value="54545">Amor</option>
+								<option value="54545">Navidad</option>
+							</select>
+							<span class="error"></span>
+						</label>
+					</div>
+					<div class="crear_gallery_container">
+						<div class="crear_nav">
+							<a class="crear_nav_left crear_nav_item" href="#"><</a>
+							<a class="crear_nav_right crear_nav_item" href="#">></a>
+						</div>
+						<div class="crear_items_container">
+							<div class="crear_items_mask">
+								<div class="crear_items_slide">
+									<div class="crear_items_slide--page">
+										<div class="crear_item">
+											<img src="gallery/viajes/1.jpg" alt="viajes 1" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/2.jpg" alt="viajes 2" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/3.jpg" alt="viajes 3" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/4.jpg" alt="viajes 4" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/5.jpg" alt="viajes 5" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/6.jpg" alt="viajes 6" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/7.jpg" alt="viajes 7" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/8.jpg" alt="viajes 8" class="crear_item_image">
+										</div>
+									</div>
+									<div class="crear_items_slide--page">
+										<div class="crear_item">
+											<img src="gallery/viajes/9.jpg" alt="viajes 9" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/10.jpg" alt="viajes 10" class="crear_item_image">
+										</div>
+										<div class="crear_item">
+											<img src="gallery/viajes/1.jpg" alt="viajes 1" class="crear_item_image">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="crear_upload_section">
+					<label for="crear_upload_field">
+						<input type="file" name="crear_upload_field" placeholder="subir">
+						<span class="error"></span>
+					</label>
+					<div class="crear_gallery_container">
+						<div class="crear_nav">
+							<a class="crear_nav_left crear_nav_item" href="#"><</a>
+							<a class="crear_nav_right crear_nav_item" href="#">></a>
+						</div>
+						<div class="crear_items_container">
+							<div class="crear_items_mask">
+								<div class="crear_items_slide">
+									<div class="crear_item">
+										<img src="gallery/viajes/1.jpg" alt="viajes 1" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/2.jpg" alt="viajes 2" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/3.jpg" alt="viajes 3" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/4.jpg" alt="viajes 4" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/5.jpg" alt="viajes 5" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/6.jpg" alt="viajes 6" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/7.jpg" alt="viajes 7" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/8.jpg" alt="viajes 8" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/9.jpg" alt="viajes 9" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/10.jpg" alt="viajes 10" class="crear_item_image">
+									</div>
+									<div class="crear_item">
+										<img src="gallery/viajes/1.jpg" alt="viajes 1" class="crear_item_image">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="crear_main_section">
+					<div class="crear_main_tools">
+						<a href="#" class="crear_main_tools_item" id="crear_main_tools_restart">Restart</a>
+					</div>
+					<div class="crear_main_canvas_container">
+						<div class="crear_main_canvas_mask">
+							<div class="crear_main_canvas"></div>
+						</div>
+					</div>
+				</div>
+			</div> 
 		</div>
 		<div class="global_footer">
 			<div class="footer_social">
