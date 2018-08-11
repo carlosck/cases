@@ -11,6 +11,7 @@
 	left: 0;
 	top: 0;
 	overflow: hidden;
+	z-index: 1;
 }
 .header_slide_item{
 	width: 100%;

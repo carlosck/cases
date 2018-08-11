@@ -1,0 +1,21 @@
+.c-menu_container{
+	width: 100%;
+	position: relative;
+	text-align: center;	
+}
+.c-menu_button
+{	
+	display: inline-block;
+	height: 50px;
+	border: 1px solid red;
+	vertical-align: top;
+	text-decoration: none;
+}
+.c-menu_button:hover{
+	text-decoration: none;
+}
+.c-menu_button p
+{	
+	padding: 15px 50px;
+	text-decoration: none;
+}
