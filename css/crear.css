@@ -1,7 +1,6 @@
 #section_crear{
 	width: 100%;
-	position: relative;
-	display: block;
+	position: relative;	
 	float: left;
 	background-color: lightgray;
 }
@@ -45,11 +44,11 @@
 	width: 70%;
 	position: relative;
 	margin: 0 auto;
-	height: 35px;
+	
 }
 .crear_gallery_selector label{
 	width: 100%;
-	height: 25px;
+	
 }
 .crear_gallery_selector select{
 	width: 100%;

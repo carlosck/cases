@@ -19,3 +19,16 @@
 	padding: 15px 50px;
 	text-decoration: none;
 }
+
+.c-button_upload{
+	display: inline-block;
+	background-color: burlywood;
+	color: black;
+	height: 50px;
+}
+
+.c-button_upload p
+{	
+	padding: 15px 50px;
+	text-decoration: none;
+}
