@@ -108,7 +108,7 @@
 	display: block;
 	text-transform: uppercase;
 	font-weight: 500;
-	background-image: url("../assets/images/crear/btn_transparent_base.png");
+	background-image: url("../assets/images/slider/btn_transparent_base.png");
 	border-radius: 0;
 }
 .header_slide_button p{
@@ -118,30 +118,30 @@
 }
 .header_slide_bg{
 	background-size: cover;
-	background-position: center;	
+	background-position: left;	
 }
 .header_slide_case{
 	background-size: cover;
 }
 .slider_no_1 .header_slide_bg{
-	background-image: url("../assets/images/crear/bg_1.png");
+	background-image: url("../assets/images/slider/bg_1.png");
 }
 .slider_no_1 .header_slide_case{	
-	background-image: url("../assets/images/crear/case_1.png");
+	background-image: url("../assets/images/slider/case_1.png");
 }
 
 .slider_no_2 .header_slide_bg{	
-	background-image: url("../assets/images/crear/bg_2.png");
+	background-image: url("../assets/images/slider/bg_2.png");
 }
 .slider_no_2 .header_slide_case{	
-	background-image: url("../assets/images/crear/case_2.png");
+	background-image: url("../assets/images/slider/case_2.png");
 }
 
 .slider_no_3 .header_slide_bg{	
-	background-image: url("../assets/images/crear/bg_3.png");
+	background-image: url("../assets/images/slider/bg_3.png");
 }
 .slider_no_3 .header_slide_case{	
-	background-image: url("../assets/images/crear/case_3.png");
+	background-image: url("../assets/images/slider/case_3.png");
 }
 @media screen and (min-width : 480px){
 	.header_slide_text_container{
@@ -172,5 +172,9 @@
 		transform: translateY(-50%);
 		/*border: 5px solid black;*/
 		z-index: 2;
+	}
+	.header_slide_bg
+	{
+		background-position: left;
 	}
 }
