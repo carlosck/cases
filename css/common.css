@@ -1,3 +1,20 @@
+.c-title-h4{
+	font-family: "mblack";
+	font-weight: 900;
+	text-transform: uppercase;
+}
+.c-button p{
+	font-family: "msemibold";
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	-o-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+}
+
+
 .c-menu_container{
 	width: 100%;
 	position: relative;

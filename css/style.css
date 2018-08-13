@@ -27,9 +27,12 @@ html,body{
 	display: block;
 	float: left;
 	width: 100%;
+	font-family: 'mr';
 
 }
-
+body{
+	font-family: "mr";
+}
 #full_container{
 	width: 100%;
 	position: relative;
@@ -37,14 +40,13 @@ html,body{
 	float: left;
 }
 .main_menu{
-	width: 50px;
-	height: 35px;
+	width: 100%;	
 	position: absolute;
 	right: 0;
 	top: 0;
-	z-index: 50;
-	background-color: lightgray;
+	z-index: 50;	
 	text-align: center;
+	padding: 15px 25px 0;	
 }
 #stage{
 	width: 100%;
@@ -119,6 +121,120 @@ html,body{
 	text-align: center;
 	display: inline-block;
 	vertical-align: top;	
+}
+
+.main_logo{
+	position: relative;
+	float: left;
+	display: block;
+}
+.main_menu_icon{
+	position: relative;
+	display: inline-block;
+}
+.main_menu_icon.logo_ico{
+	width: 17px;
+	height: 25px;
+	background-image: url('../assets/images/menu/ico_logo.png');
+	position: relative;
+	left: 0;
+	top: 0;	
+	-webkit-transform: translate(0);
+	-ms-transform: translate(0);
+	-o-transform: translate(0);
+	transform: translate(0);
+}
+.logo_page_name{
+	position: relative;
+	display: inline-block;
+	color: #333333;
+	vertical-align: top;
+	font-weight: 800;
+	text-transform: uppercase;
+	font-family: 'mblack';
+	font-size: 13px;
+	margin-top: 4px;
+}
+.main_menu_btn_container{
+	position: relative;
+	display: inline-block;
+	float: right;
+}
+.main_menu_btn_container li{
+	position: relative;
+	display: inline-block;
+}
+.main_menu_btn{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	height: 30px;
+	background-color: #333;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.main_menu_btn_crear{
+	width: 104px;	
+	color: white;
+	background-color: transparent;
+	border-radius: 0;
+	background-image: url('../assets/images/menu/base_btn.png');
+}
+.main_menu_btn_crear .main_menu_btn_text{
+	width: 100%;
+	position: absolute;
+	top: 6px;
+	left: 0;
+	color: white;
+	font-family: "msemibold";
+	font-size: 13px;
+	text-transform: uppercase;	
+}
+.main_menu_icon{
+	display: inline-block;
+	vertical-align: top;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translateX(-50%) translateY(-50%);
+	-ms-transform: translateX(-50%) translateY(-50%);
+	-o-transform: translateX(-50%) translateY(-50%);
+	transform: translateX(-50%) translateY(-50%);
+}
+.main_menu_btn_text{
+	display: inline-block;
+	vertical-align: top;
+}
+.main_menu_btn_carrito{
+	width: 30px;
+}
+.carrito_ico{
+	width: 14px;
+	height: 13px;
+	background-image: url('../assets/images/menu/carrito_14x13.png');
+	
+}
+.main_menu_btn_carrito .main_menu_btn_text{
+	width: 15px;
+	height: 15px;
+	background-color: #f7d05c;
+	border-radius: 50%;
+	color: #333333;
+	position: absolute;
+	right: -3px;
+	top: -3px;
+	font-family: "msemibold";
+	font-size: 10px;
+	font-weight: 600;
+}
+.main_menu_btn_login{
+	width: 30px;
+}
+.login_ico{
+	width: 14px;
+	height: 14px;
+	background-image: url('../assets/images/menu/user_14x14.png');
 }
 @media screen and (min-width : 768px){
 	.main_info_stage{
