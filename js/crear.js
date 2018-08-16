@@ -19,6 +19,7 @@ document.crear={
 		this.$container = $('#section_crear');
 		this.$menu_container = $('.crear_gallery_menu_container',this.$container);
 		this.$section_container = $('.crear_gallery_section_container',this.$container);
+		this.$canvas_container = $(".crear_main_canvas_container",this.$container);
 	},
 	bind(){
 		var that = this;
@@ -30,7 +31,20 @@ document.crear={
 		})
 	},
 	init(){
-
+		$( ".crear_item_image" ).draggable(
+			{ 
+				appendTo:  $('#section_crear'), // Append to the body.
+        		zIndex: 9,
+        		//containment: $('#section_crear'),
+				revert: "valid",
+        		helper: 'clone',
+        		start: function(e, ui)
+        		 {
+        		  $(ui.helper).addClass("crear_item_image--clone");
+        		 }
+         });
+		document.canvas_manager.constructor($,this);
+		
 	},
 	showSection(_section,that){
 		

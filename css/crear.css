@@ -3,6 +3,8 @@
 	position: relative;	
 	float: left;
 	background-color: lightgray;
+	padding-top: 100px;
+
 }
 .crear_form_container{
 	width: 100%;
@@ -186,7 +188,7 @@
 }
 .crear_main_canvas{
 	width: 320px;
-	height: 680px;
+	height: 500px;
 	position: relative;
 	display: block;
 	background-color: lightgray;
@@ -194,8 +196,29 @@
 	margin: 0 auto; 
 
 }
-
+.crear_item_image--clone{
+	width: 200px;
+	height: 200px;
+	opacity: 0.5;
+	border: 1px solid black;
+}
 @media screen and (min-width : 768px){
+	.crear_gallery_sectioncontainer {
+		width: 50%;
+		float: left;
+	}
+	.crear_gallery_container{
+		width: 90%;
+
+	}
+	.crear_gallery_section__gallery
+	{
+		text-align: center;
+	}
+	.crear_main_section{
+		width: 50%;
+		float: left;
+	}
 	.crear_form_container label{		
 		width: 40%;	
 		margin-left: 5%;
@@ -228,12 +251,13 @@
 		color: white;
 	}
 	.crear_item{
-		width: 20%;
-		margin: 2.5%;
+		width: 24%;
+		margin: 0.5%;
 	}
 	.crear_item img{
-		width: 320px;
+		width: 100%;
 		height: auto;
+		padding: 0;
 		position: relative;
 		margin: 0 auto;
 		display: block;
