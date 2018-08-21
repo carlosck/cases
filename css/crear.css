@@ -186,7 +186,7 @@
 {
 	width: 100%;
 }
-.crear_main_canvas{
+#crear_main_canvas{
 	width: 320px;
 	height: 500px;
 	position: relative;
@@ -201,6 +201,9 @@
 	height: 200px;
 	opacity: 0.5;
 	border: 1px solid black;
+}
+.img_resizer img{
+	display: inline-block;
 }
 @media screen and (min-width : 768px){
 	.crear_gallery_sectioncontainer {
@@ -253,6 +256,7 @@
 	.crear_item{
 		width: 24%;
 		margin: 0.5%;
+		min-width: 
 	}
 	.crear_item img{
 		width: 100%;
@@ -260,7 +264,8 @@
 		padding: 0;
 		position: relative;
 		margin: 0 auto;
-		display: block;
+		display: inline-block;
+		vertical-align: center;
 	}
 
 }
