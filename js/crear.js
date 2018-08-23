@@ -19,7 +19,7 @@ document.crear={
 		this.$container = $('#section_crear');
 		this.$menu_container = $('.crear_gallery_menu_container',this.$container);
 		this.$section_container = $('.crear_gallery_section_container',this.$container);
-		this.$canvas_container = $(".crear_main_canvas_container",this.$container);
+		this.$canvas_container = $(".crear_main_canvas_container",this.$container);		
 	},
 	bind(){
 		var that = this;
@@ -28,7 +28,8 @@ document.crear={
 			if($(event.currentTarget).hasClass(this.classMenuSelected)) return false;
 			var section = $(event.currentTarget).data('section');			
 			that.showSection(section,that); 
-		})
+		});		
+
 	},
 	init(){
 		$( ".crear_item_image" ).draggable(
@@ -53,6 +54,9 @@ document.crear={
 
 		$("."+this.classSectionSelected,this.$section_container).removeClass(this.classSectionSelected);
 		$("."+this.classSectionBase+"__"+_section,this.$section_container).addClass(this.classSectionSelected);
+
+	},
+	restartCanvas(){
 
 	}
 }
