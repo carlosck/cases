@@ -39,12 +39,17 @@ document.canvas_manager={
 				var src= ui.draggable[0].src;
 								
 				that.$canvas.append('<div class="img_resizer item_'+that.count+'"><img src="'+src+'" /></div>')
+				var con = that.count;
 				$( '.img_resizer.item_'+that.count+' img' ).resizable({
 					containment: ".crear_main_canvas_container",
 					aspectRatio: true,
-					autoHide: false
+					stop: function( event, ui ) {					
+						$(ui.element.parent()).width(ui.size.width);
+						$(ui.element.parent()).height(ui.size.height);
+						//$( '.img_resizer.item_'+that.count ).width= 
+					}
 				});
-				$( '.img_resizer.item_'+that.count ).rotatable();
+				$( '.img_resizer.item_'+that.count ).rotatable({wheelRotate:false});
 				$( ".img_resizer.item_"+that.count ).draggable({ containment: ".crear_main_canvas_container", scroll: false });
 				that.count++;
 			}
@@ -52,8 +57,24 @@ document.canvas_manager={
 	},
 	saveCanvas(){
 		var elements=[];
+		var width = 
 		$('.img_resizer',this.$canvas).each(function(index,element){
-			elements.push(element);
+			var img = $('img',element );
+			
+			var position= $(element).position();
+			var width= img.width();
+			var height= img.height();
+			var angle = $(element).data('uiRotatable').elementStopAngle;
+			var src= img.attr('src');
+			var obj = {
+				position,
+				angle,
+				width,
+				height,
+				src,
+			};
+			elements.push(obj);			
+
 		});
 		console.log(elements);
 	},
