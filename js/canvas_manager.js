@@ -76,7 +76,24 @@ document.canvas_manager={
 			elements.push(obj);			
 
 		});
-		console.log(elements);
+
+		var img_base = {
+			width: this.$canvas.width(),
+			height: this.$canvas.height()
+		};
+		
+		console.log('casi ajax');
+		$.ajax({
+			method: "GET",
+			url: "service/create_img.php",
+			dataType: "json",
+			data: { images: elements, phone_type: "iphone5",base: img_base }
+		})
+		.done(function( obj_json ) {
+			console.log( "Data Saved: " + obj_json );
+			window.open('service/'+obj_json.imagen,'_blank')
+		});
+		console.log('ajax');
 	},
 	restartCanvas(){
 		this.$canvas.empty();
