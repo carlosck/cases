@@ -11,6 +11,7 @@ var rw={
 	cacheElements(){
 		this.$section_home = $('#main_slide');
 		this.$section_crear = $('#section_crear');
+		this.$section_car = $('#section_car');
 		
 		this.$btg_goto_crear = $('.header_slide_button',this.$section_home);
 
@@ -36,6 +37,9 @@ var rw={
 	gotoCrear(){
 		this.$section_home.removeClass(this.classSectionActive);
 		this.$section_crear.addClass(this.classSectionActive);
+	},
+	gotoCart(){
+
 	}
 	
 }

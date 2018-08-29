@@ -6,6 +6,8 @@ document.canvas_manager={
 		this.binding();
 		this.init();
 		this.count=0;
+
+		document.form_create_manager.constructor();
 	},
 	cacheElements(){
 		this.$container = $(".crear_main_canvas_container",this.$container);
@@ -81,17 +83,19 @@ document.canvas_manager={
 			width: this.$canvas.width(),
 			height: this.$canvas.height()
 		};
+		var form_data = document.form_create_manager.getData();
 		
-		console.log('casi ajax');
+		
 		$.ajax({
 			method: "GET",
 			url: "service/create_img.php",
 			dataType: "json",
-			data: { images: elements, phone_type: "iphone5",base: img_base }
+			data: { images: elements, base: img_base,form_data: form_data }
 		})
 		.done(function( obj_json ) {
 			console.log( "Data Saved: " + obj_json );
-			window.open('service/'+obj_json.imagen,'_blank')
+			window.open('service/'+obj_json.imagen,'_blank');
+			this.main.showCart();
 		});
 		console.log('ajax');
 	},

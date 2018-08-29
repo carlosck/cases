@@ -1,5 +1,6 @@
 <?php
-
+session_start();
+//require_once('ResponseClass.php');
 //
 $images= $_GET['images'];
 $base = $_GET['base'];
@@ -60,9 +61,24 @@ imagecopyresampled($base, $img, $x_scale, $y_scale, 0, 0,$w_scale, $h_scale , $W
 imagecopy($base, $filtro_blanco, 0, 0, 0, 0, $WIDTH_FINAL, $HEIGHT_FINAL);
 */
 //header('Content-Type: image/jpeg');
+$ext='jpg';
+$code_string='ABCDEFGHIJKLMNOPQRSTUVWXZ0123456789';
+$initial='ABCDEFGHIJKLMNOPQRSTUVWXZ';
+$usr_code  = create_name(8,$initial,$code_string);
+$image_name= $usr_code.'.'.$ext;
+$image_full_name= '../img/img_t/'.$image_name;
+
 header("Content-type: application/json; charset=utf-8");
-imagejpeg($IMG_BASE, 'imagen.jpg',95);
-echo json_encode(['imagen'=>'imagen.jpg']);
+imagejpeg($IMG_BASE, $image_full_name,95);
+if(!isset($_SESSION['items'])){
+	$_SESSION['items']=[];
+}
+$_SESSION['items'][$usr_code]=(object)[
+		"code"=>$usr_code,
+		"save_image"=>$image_full_name,
+		'form_data'=>$_GET['form_data'] 
+	];
+echo json_encode(['imagen'=>$image_full_name]);
 //imagejpeg($img, NULL, 75);
 /*
 $src= $_GET['img']; 
@@ -135,4 +151,51 @@ imagejpeg($base, NULL, 75);
 //imagejpeg($base, NULL, 75);
 
 */
+function get_file_name(){
+	$filename = $_FILES['imagen']['name'];
+	$ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+	$data= new stdClass();
+	switch($ext)
+	{
+		case 'jpg':
+		case 'JPG':
+		case 'JPEG':
+		case 'jpeg':$imagen = imagecreatefromjpeg($_FILES['imagen']['tmp_name']);
+		break;
+		case 'PNG':
+		case 'png':$imagen = imagecreatefrompng($_FILES['imagen']['tmp_name']);
+		break;
+		default: $data->error= 1;
+			$data->msg = "extension no reconocida";
+			$response->setData($data);
+			$response->printAsJson();
+			die();
+		break;	
+		
+	}
+}
+function create_name($length,$initial,$code_string)
+{
+
+	$rand_initial=rand(0,strlen($initial)-1);
+	$result =$initial[$rand_initial];
+	$result.=generate_code(floor($length/2),$initial,$code_string);
+	$result.='_'.generate_code(floor($length/2),$initial,$code_string);
+	return $result;
+
+}
+
+function generate_code($length,$initial,$code_string)
+{
+
+	$result='';
+	for($i=0;$i<$length;$i++)
+	{
+		$rand=rand(0,strlen($code_string)-1);
+		$result.=$code_string[$rand];
+	}
+	return $result;
+}
+
 ?>
