@@ -26,19 +26,19 @@
 			<ul class="main_menu_btn_container">
 				
 				<li>
-					<a class="main_menu_btn main_menu_btn_crear" href="#">
+					<a class="main_menu_btn main_menu_btn_crear" href="#" data-section="crear">
 						<span class="main_menu_icon "></span>
 						<p class="main_menu_btn_text">crear</p>
 					</a>
 				</li>
 				<li>
-					<a class="main_menu_btn main_menu_btn_carrito" href="#">
+					<a class="main_menu_btn main_menu_btn_carrito" href="#" data-section="cart">
 						<span class="main_menu_icon carrito_ico"></span>
 						<p class="main_menu_btn_text">5</p>
 					</a>
 				</li>
 				<li>
-					<a class="main_menu_btn main_menu_btn_login " href="#">
+					<a class="main_menu_btn main_menu_btn_login " href="#" data-section="profile">
 						<span class="main_menu_icon login_ico"></span>
 						<p class="main_menu_btn_text"></p>
 					</a>
@@ -46,7 +46,7 @@
 			</ul>
 		</div>
 		<div id="stage">
-			<div class="section section_actived" id="main_slide">
+			<div class="section section_active" id="main_slide">
 				<div id="header_slide">
 					<div class="header_slide_container">
 						<div class="slider_mask">
@@ -137,7 +137,7 @@
 						<span class="error">Escoge una marca</span>
 					</label>
 					<label for="crear_model">
-						<select name="crear_model" id="" class="crear_model">
+						<select name="crear_model" id="crear_model" class="crear_model">
 							<option value="-1" selected>Selecciona un modelo</option>
 							<option value="54545">Iphone 2</option>
 							<option value="54545">Iphone 3</option>
@@ -147,7 +147,7 @@
 						<span class="error">Escoge un modelo</span>
 					</label>
 					<label for="crear_type">
-						<select name="crear_type" id="" class="crear_type">
+						<select name="crear_type" id="crear_type" class="crear_type">
 							<option value="-1" selected>Tipo de carcasa</option>
 							<option value="54545">laser</option>
 							<option value="54545">Relieve</option>
@@ -309,94 +309,102 @@
 					</div>
 				</div>
 			</div>
-			 <div class="section section_active" id="section_cart">
+			<div class="section section_actived" id="section_cart">
 			 	<div class="section_cart_container">
-			 		<div class="cart_items_container">
-			 			<div class="c-cart_item" id="car_item_1">
-				 			<div class="c-cart_item_imagecontainer">
-				 				<img src="img/img_t/W83PS_1KKW.jpg" alt="" class="c-listado_item_image">
-				 			</div>
-				 			
-				 			<div class="c-cart_item_datacontainer">
-				 				
-				 				<div class="c-cart_item_description">
-					 				<p>Carcasa Grabada </p>
-					 			</div>
-					 			<div class="c-cart_item_price">
-					 				<span>450.00</span>MX
-					 			</div>
-					 			<div class="c-cart_item_quantity">
-					 				<input type="text" value="1" />
-					 			</div>
-					 			<div class="c-cart_item_remove">
-					 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
-					 			</div>
-					 		</div>
-				 		</div>
-
-				 		<div class="c-cart_item" id="car_item_1">
-				 			<div class="c-cart_item_imagecontainer">
-				 				<img src="img/img_t/Z2206_EV31.jpg" alt="" class="c-listado_item_image">
-				 			</div>
-				 			
-				 			<div class="c-cart_item_datacontainer">
-				 				
-				 				<div class="c-cart_item_description">
-					 				<p>Carcasa Grabada </p>
-					 			</div>
-					 			<div class="c-cart_item_price">
-					 				<span>450.00</span>MX
-					 			</div>
-					 			<div class="c-cart_item_quantity">
-					 				<input type="text" value="1" />
-					 			</div>
-					 			<div class="c-cart_item_remove">
-					 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
-					 			</div>
-					 		</div>
-				 		</div>
-
-				 		<div class="c-cart_item" id="car_item_1">
-				 			<div class="c-cart_item_imagecontainer">
-				 				<img src="img/img_t/ZI6UE_1QGF.jpg" alt="" class="c-listado_item_image">
-				 			</div>
-				 			
-				 			<div class="c-cart_item_datacontainer">
-				 				
-				 				<div class="c-cart_item_description">
-					 				<p>Carcasa Grabada </p>
-					 			</div>
-					 			<div class="c-cart_item_price">
-					 				<span>450.00</span>MX
-					 			</div>
-					 			<div class="c-cart_item_quantity">
-					 				<input type="text" value="1" />
-					 			</div>
-					 			<div class="c-cart_item_remove">
-					 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
-					 			</div>
-					 		</div>
-				 		</div>
-
-
+			 		<div class="cart_loading cart_section cart_section--active">
+			 			loading....
 			 		</div>
+			 		<div class="cart_items_stage  cart_section">
+				 		<div class="cart_items_container ">
+				 			<div class="c-cart_item" id="car_item_1">
+					 			<div class="c-cart_item_imagecontainer">
+					 				<img src="img/img_t/W83PS_1KKW.jpg" alt="" class="c-listado_item_image">
+					 			</div>
+					 			
+					 			<div class="c-cart_item_datacontainer">
+					 				
+					 				<div class="c-cart_item_description">
+						 				<p>Carcasa Grabada </p>
+						 			</div>
+						 			<div class="c-cart_item_price">
+						 				<span>450.00</span>MX
+						 			</div>
+						 			<div class="c-cart_item_quantity">
+						 				<input type="text" value="1" />
+						 			</div>
+						 			<div class="c-cart_item_remove">
+						 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
+						 			</div>
+						 		</div>
+					 		</div>
+
+					 		<div class="c-cart_item" id="car_item_1">
+					 			<div class="c-cart_item_imagecontainer">
+					 				<img src="img/img_t/Z2206_EV31.jpg" alt="" class="c-listado_item_image">
+					 			</div>
+					 			
+					 			<div class="c-cart_item_datacontainer">
+					 				
+					 				<div class="c-cart_item_description">
+						 				<p>Carcasa Grabada </p>
+						 			</div>
+						 			<div class="c-cart_item_price">
+						 				<span>450.00</span>MX
+						 			</div>
+						 			<div class="c-cart_item_quantity">
+						 				<input type="text" value="1" />
+						 			</div>
+						 			<div class="c-cart_item_remove">
+						 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
+						 			</div>
+						 		</div>
+					 		</div>
+
+					 		<div class="c-cart_item" id="car_item_1">
+					 			<div class="c-cart_item_imagecontainer">
+					 				<img src="img/img_t/ZI6UE_1QGF.jpg" alt="" class="c-listado_item_image">
+					 			</div>
+					 			
+					 			<div class="c-cart_item_datacontainer">
+					 				
+					 				<div class="c-cart_item_description">
+						 				<p>Carcasa Grabada </p>
+						 			</div>
+						 			<div class="c-cart_item_price">
+						 				<span>450.00</span>MX
+						 			</div>
+						 			<div class="c-cart_item_quantity">
+						 				<input type="text" value="1" />
+						 			</div>
+						 			<div class="c-cart_item_remove">
+						 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
+						 			</div>
+						 		</div>
+					 		</div>
+
+					 		
+				 		</div>
+				 		<div class="cart_resume">
+					 			<div class="cart_resume_container">
+					 				<div class="cart_resume_total">
+						 				<span>$2,000.00</span>MX
+						 			</div>
+						 			<div class="cart_resume_pay">
+						 				<a href="#" class="cart_resume_create_button c-button">
+						 					Crear otra
+						 				</a>
+						 				<a href="#" class="cart_resume_pay_button c-button">
+						 					pagar
+						 				</a>
+						 			</div>	
+					 			</div>
+					 			
+					 		</div>
+				 	</div>
 			 		
-			 		<div class="cart_resume">
-			 			<div class="cart_resume_container">
-			 				<div class="cart_resume_total">
-				 				<span>$2,000.00</span>MX
-				 			</div>
-				 			<div class="cart_resume_pay">
-				 				<a href="#" class="cart_resume_pay_button c-button">
-				 					pagar
-				 				</a>
-				 			</div>	
-			 			</div>
-			 			
-			 			
-			 		</div>
+			 		
 			 	</div>
-			 </div>
+			</div>
 		</div>
 		<div class="global_footer">
 			<div class="footer_social">
@@ -406,7 +414,34 @@
 			</div>
 		</div>
 	</div>
+
+	<script id="cart-item-template" type="text/x-handlebars-template">
+		<div class="c-cart_item" id="car_item_{{uid}}" data-uid={{uid}}>
+			<div class="c-cart_item_imagecontainer">
+				<img src="img/img_t/{{imagen}}" alt="" class="c-listado_item_image">
+			</div>
+			
+			<div class="c-cart_item_datacontainer">
+				
+				<div class="c-cart_item_description">
+					<p>{{brand}} </p>
+					<p>{{model}} </p>
+					<p>{{type}} </p>
+				</div>
+				<div class="c-cart_item_price">
+					<span>{{price}}</span>MX
+				</div>
+				<div class="c-cart_item_quantity">
+					<input type="text" value="1" />
+				</div>
+				<div class="c-cart_item_remove">
+					<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
+				</div>
+			</div>
+		</div>
+	</script>
 	<script type="text/javascript" src="js/libs/jquery-3.3.1.min.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/libs/handlebars.min-148b191.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/TweenMax.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/TimelineMax.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/jquery.gsap.min.js" charset="utf-8"></script>
@@ -416,8 +451,10 @@
 	<script type="text/javascript" src="js/libs/jquery.ui.rotatable.min.js" charset="utf-8"></script>
 	
 	<script type="text/javascript" src="js/header_slide.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/menu_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/form_create_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/canvas_manager.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/cart_manager.js" charset="utf-8"></script>
 	
 	<script type="text/javascript" src="js/crear.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/main.js" charset="utf-8"></script>

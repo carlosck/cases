@@ -53,3 +53,10 @@
 	display: block;	
 	float: right;
 }
+
+.cart_section{
+	display: none;
+}
+.cart_section.cart_section--active{
+	display: block;
+}

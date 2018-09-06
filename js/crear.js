@@ -44,7 +44,7 @@ document.crear={
         		  $(ui.helper).addClass("crear_item_image--clone");
         		 }
          });
-		document.canvas_manager.constructor($,this);
+		document.canvas_manager.constructor(this);
 		
 	},
 	showSection(_section,that){
@@ -56,7 +56,8 @@ document.crear={
 		$("."+this.classSectionBase+"__"+_section,this.$section_container).addClass(this.classSectionSelected);
 
 	},
-	restartCanvas(){
-
+	
+	gotoCart(){
+		this.main.gotoCart();
 	}
 }

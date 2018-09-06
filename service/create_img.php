@@ -75,7 +75,7 @@ if(!isset($_SESSION['items'])){
 }
 $_SESSION['items'][$usr_code]=(object)[
 		"code"=>$usr_code,
-		"save_image"=>$image_full_name,
+		"save_image"=>$image_name,
 		'form_data'=>$_GET['form_data'] 
 	];
 echo json_encode(['imagen'=>$image_full_name]);

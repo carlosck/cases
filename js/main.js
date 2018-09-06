@@ -11,10 +11,11 @@ var rw={
 	cacheElements(){
 		this.$section_home = $('#main_slide');
 		this.$section_crear = $('#section_crear');
-		this.$section_car = $('#section_car');
+		this.$section_cart = $('#section_cart');
+		this.$section_profile = $('#section_profile');
 		
 		this.$btg_goto_crear = $('.header_slide_button',this.$section_home);
-
+		this.$main_info_btn = $('.main_info_btn',this.$section_home);
 
 		return this;
 	},
@@ -22,24 +23,59 @@ var rw={
 		
 		var that= this;
 		this.$btg_goto_crear.on('click',function(event){
-			event.preventDefault();
-			console.log('click');
-			that.gotoCrear();
+			event.preventDefault();			
+			this.gotoCrear();
 		}.bind(this))
+
+		this.$main_info_btn.on('click',function(event){
+			event.preventDefault();			
+			this.gotoCrear();
+		}.bind(this));	
 	},
 	
 	init(){
 		
-	document.headerSlide.constructor($,this);
-	document.crear.constructor($,this);
-		
+	document.headerSlide.constructor(this);
+	document.crear.constructor(this);
+	document.menu_manager.constructor(this);	
+	document.cart_manager.constructor(this);	
+	},
+	hideAllSection(){
+		$('.section').removeClass(this.classSectionActive);
+	},
+	gotoHome(){
+		this.hideAllSection();
+		this.$section_home.addClass(this.classSectionActive);	
 	},
 	gotoCrear(){
-		this.$section_home.removeClass(this.classSectionActive);
-		this.$section_crear.addClass(this.classSectionActive);
+		this.hideAllSection();
+		this.$section_crear.addClass(this.classSectionActive);		
 	},
 	gotoCart(){
-
+		this.hideAllSection();
+		this.$section_cart.addClass(this.classSectionActive);
+		document.cart_manager.initData();
+	},
+	gotoProfile(){
+		this.hideAllSection();
+		this.$section_profile.addClass(this.classSectionActive);
+	},
+	gotoSection(section){
+		switch(section)
+		{
+			case 'home':
+				this.gotoHome();
+			break;
+			case 'crear':
+				this.gotoCrear();
+			break;
+			case 'cart':
+				this.gotoCart();
+			break;			
+			case 'profile':
+				this.gotoProfile();
+			break;
+		}
 	}
 	
 }
