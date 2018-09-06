@@ -93,9 +93,7 @@ document.canvas_manager={
 			dataType: "json",
 			data: { images: elements, base: img_base,form_data: form_data }
 		})
-		.done(function( obj_json ) {
-			console.log( "Data Saved: " + obj_json );
-			window.open('service/'+obj_json.imagen,'_blank');
+		.done(function( obj_json ) {			
 			this.main.gotoCart();
 		}.bind(this));
 		
