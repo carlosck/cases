@@ -314,6 +314,14 @@
 			 		<div class="cart_loading cart_section cart_section--active">
 			 			loading....
 			 		</div>
+			 		<div class="cart_items_empty cart_section ">
+			 			<p>no cuentas con Items en tu carrito</p>
+			 			<a class="cart_empty_button c-button" href="#">
+							<p>
+								Crea el tuyo
+							</p>
+						</a>
+					</div>
 			 		<div class="cart_items_stage  cart_section">
 				 		<div class="cart_items_container ">
 				 			<div class="c-cart_item" id="car_item_1">
@@ -385,21 +393,26 @@
 					 		
 				 		</div>
 				 		<div class="cart_resume">
-					 			<div class="cart_resume_container">
-					 				<div class="cart_resume_total">
-						 				<span>$2,000.00</span>MX
-						 			</div>
-						 			<div class="cart_resume_pay">
-						 				<a href="#" class="cart_resume_create_button c-button">
-						 					Crear otra
-						 				</a>
-						 				<a href="#" class="cart_resume_pay_button c-button">
-						 					pagar
-						 				</a>
-						 			</div>	
+				 			<div class="cart_resume_container">
+				 				<div class="cart_resume_total">
+					 				<input type="text" id="cart_input_total" disabled="true" value="0"><span>MX</span>
 					 			</div>
-					 			
-					 		</div>
+					 			<div class="cart_resume_pay">
+					 				<a href="#" class="cart_resume_create_button c-button">
+					 					Crear otra
+					 				</a>
+					 				<a href="#" class="cart_resume_pay_button c-button">
+					 					pagar
+					 				</a>
+					 			</div>	
+				 			</div>
+				 			<div class="cart_container_form">
+				 				<form id="cart_form">
+				 					
+				 				</form>
+				 			</div>
+				 			
+				 		</div>
 				 	</div>
 			 		
 			 		
@@ -416,7 +429,7 @@
 	</div>
 
 	<script id="cart-item-template" type="text/x-handlebars-template">
-		<div class="c-cart_item" id="car_item_{{uid}}" data-uid={{uid}}>
+		<div class="c-cart_item" id="car_item_{{uid}}" data-uid={{uid}} data-price={{price}}>
 			<div class="c-cart_item_imagecontainer">
 				<img src="img/img_t/{{imagen}}" alt="" class="c-listado_item_image">
 			</div>

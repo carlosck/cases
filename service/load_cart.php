@@ -14,6 +14,7 @@ if(isset($_SESSION['items']))
 			'uid'=>$item->code,
 			'brand'=>$item->form_data['brand'],
 			'model'=>$item->form_data['model'],
+			'price'=>350,
 			'type'=>$item->form_data['type'],
 		];
 	}	
