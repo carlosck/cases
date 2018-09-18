@@ -1,0 +1,16 @@
+#section_profile{
+	margin-top: 40px;
+	width: 100%;
+	position: relative;
+}
+.section_profile{
+	display: none;
+}
+.section_profile--selected{
+	display: block;
+}
+.section_profile_form_container{
+	width: 768px;
+	position: relative;
+	margin: 0 auto;
+}

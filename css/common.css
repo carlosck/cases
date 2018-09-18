@@ -50,3 +50,35 @@
 	padding: 15px 50px;
 	text-decoration: none;
 }
+.c-button{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: inline-block;
+    font-family: "msemibold";
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 3px solid transparent;
+    white-space: nowrap;
+    line-height: 1.4;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    outline: none;
+    padding: 9px 36px;
+    font-size: 18px;
+    box-shadow: 3px 10px 30px -4px rgba(0,0,0,.2);
+    margin-bottom: 25px;
+    color: #fff;
+    background-color: #236aee;
+    border-color: #236aee;
+}

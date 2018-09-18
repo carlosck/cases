@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="css/slide.css">
 	<link rel="stylesheet" href="css/crear.css">
 	<link rel="stylesheet" href="css/cart.css">
+	<link rel="stylesheet" href="css/profile.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="UTF-8">
 </head>
@@ -323,73 +324,7 @@
 						</a>
 					</div>
 			 		<div class="cart_items_stage  cart_section">
-				 		<div class="cart_items_container ">
-				 			<div class="c-cart_item" id="car_item_1">
-					 			<div class="c-cart_item_imagecontainer">
-					 				<img src="img/img_t/W83PS_1KKW.jpg" alt="" class="c-listado_item_image">
-					 			</div>
-					 			
-					 			<div class="c-cart_item_datacontainer">
-					 				
-					 				<div class="c-cart_item_description">
-						 				<p>Carcasa Grabada </p>
-						 			</div>
-						 			<div class="c-cart_item_price">
-						 				<span>450.00</span>MX
-						 			</div>
-						 			<div class="c-cart_item_quantity">
-						 				<input type="text" value="1" />
-						 			</div>
-						 			<div class="c-cart_item_remove">
-						 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
-						 			</div>
-						 		</div>
-					 		</div>
-
-					 		<div class="c-cart_item" id="car_item_1">
-					 			<div class="c-cart_item_imagecontainer">
-					 				<img src="img/img_t/Z2206_EV31.jpg" alt="" class="c-listado_item_image">
-					 			</div>
-					 			
-					 			<div class="c-cart_item_datacontainer">
-					 				
-					 				<div class="c-cart_item_description">
-						 				<p>Carcasa Grabada </p>
-						 			</div>
-						 			<div class="c-cart_item_price">
-						 				<span>450.00</span>MX
-						 			</div>
-						 			<div class="c-cart_item_quantity">
-						 				<input type="text" value="1" />
-						 			</div>
-						 			<div class="c-cart_item_remove">
-						 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
-						 			</div>
-						 		</div>
-					 		</div>
-
-					 		<div class="c-cart_item" id="car_item_1">
-					 			<div class="c-cart_item_imagecontainer">
-					 				<img src="img/img_t/ZI6UE_1QGF.jpg" alt="" class="c-listado_item_image">
-					 			</div>
-					 			
-					 			<div class="c-cart_item_datacontainer">
-					 				
-					 				<div class="c-cart_item_description">
-						 				<p>Carcasa Grabada </p>
-						 			</div>
-						 			<div class="c-cart_item_price">
-						 				<span>450.00</span>MX
-						 			</div>
-						 			<div class="c-cart_item_quantity">
-						 				<input type="text" value="1" />
-						 			</div>
-						 			<div class="c-cart_item_remove">
-						 				<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
-						 			</div>
-						 		</div>
-					 		</div>
-
+				 		<div class="cart_items_container ">				 		
 					 		
 				 		</div>
 				 		<div class="cart_resume">
@@ -418,6 +353,174 @@
 			 		
 			 	</div>
 			</div>
+			<div class="section section_actived" id="section_profile">
+				
+				<div class="section_profile section_profile_loader">
+					<p>loading...</p>
+				</div>
+				<div class="section_profile section_profile_login section_profile--selected">
+					<div class="section_profile_login_container section_profile_form_container">
+						<form id="profile_login_form">
+							<label for="login_user">
+								<input type="text" name="login_mail" id="login_mail" placeholder="correo">							
+								<span class="error">Ingresa tu correo</span>
+							</label>
+							<label for="login_pass">
+								<input type="password" name="login_pass" id="login_pass" placeholder="Password">							
+								<span class="error">Ingresa tu password</span>
+							</label>
+							<a href="#" class="login_button c-button">
+			 					Ingresar
+			 				</a>
+			 				<a href="#" class="login_recuperar_button c-button">
+			 					Recuperar contraseña
+			 				</a>
+						</form>
+					</div>
+				</div>
+				<div class="section_profile section_profile_recuperar section_profile--selected">
+					<div class="section_profile_recuperar_container section_profile_form_container">
+						<form id="profile_recuperar_form">
+							<label for="recuperar_mail">
+								<input type="text" name="recuperar_mail" id="recuperar_mail" placeholder="correo">
+								<span class="error">Ingresa tu correo</span>
+							</label>
+							
+							<a href="#" class="recuperar_button c-button">
+			 					Recuperar
+			 				</a>
+			 				<a href="#" class="go_login_button c-button">
+			 					Login 
+			 				</a>
+						</form>
+					</div>
+				</div>
+				<div class="section_profile section_profile_register section_profile--selected">
+					<div class="section_profile_register_container section_profile_form_container">
+						<form id="profile_register_form">
+							<label for="register_user">
+								<input type="text" name="register_mail" id="register_mail" placeholder="correo">							
+								<span class="error">Ingresa tu correo</span>
+							</label>
+							<label for="register_pass">
+								<input type="password" name="register_pass" id="register_pass" placeholder="Password">							
+								<span class="error">Ingresa tu password</span>
+							</label>
+							<label for="register_repass">
+								<input type="password" name="register_repass" id="register_repass" placeholder="Confirma tu Password">							
+								<span class="error">Confirma tu password</span>
+							</label>
+							<label for="profile_register_names">
+								<input type="text" name="profile_register_names" id="profile_register_names" placeholder="Nombres">
+								<span class="error">Nombres</span>
+							</label>
+							<label for="profile_register_apellidos">
+								<input type="text" name="profile_register_apellidos" id="profile_register_apellidos" placeholder="Apellidos">
+								<span class="error">Apellidos</span>
+							</label>
+
+							<label for="profile_register_mobilephone">
+								<input type="text" name="profile_register_mobilephone" id="profile_register_mobilephone" placeholder="Telefono Celular">
+								<span class="error">Celular</span>
+							</label>
+							<label for="profile_register_calle">
+								<input type="text" name="profile_register_calle" id="profile_register_calle" placeholder="Calle">
+								<span class="error">ingresa tu Calle</span>
+							</label>
+							<label for="profile_register_numerocasa">
+								<input type="text" name="profile_register_numerocasa" id="profile_register_numerocasa" placeholder="Número de casa">
+								<span class="error">ingresa el número de tu casa</span>
+							</label>
+							<label for="profile_register_colonia">
+								<input type="text" name="profile_register_colonia" id="profile_register_colonia" placeholder="Colonia">
+								<span class="error">ingresa tu Colonia</span>
+							</label>
+
+							<label for="profile_register_cp">
+								<input type="text" name="profile_register_cp" id="profile_register_cp" placeholder="Código Postal">
+								<span class="error">ingresa tu Código Postal</span>
+							</label>
+							<label for="profile_register_ciudad">
+								<input type="text" name="profile_register_ciudad" id="profile_register_ciudad" placeholder="Ciudad">
+								<span class="error">ingresa tu Ciudad</span>
+							</label>
+							<label for="crear_gallery">
+								<select name="profile_register_estado" id="" class="profile_register_estado--select">
+									<option value="-1" selected>Coahuila</option>
+									<option value="54545">Chihuaua</option>
+									<option value="54545">Aguascalientes</option>
+									<option value="54545">Sonora</option>
+								</select>
+								<span class="error">Selecciona un Estado</span>
+							</label>
+							<a href="#" class="profile_register_button c-button">Registrarse 
+			 				</a>
+						</form>
+					</div><!-- section_profile_main-->
+				</div>
+
+				<div class="section_profile section_profile_update section_profile--selected">
+					<div class="section_profile_update_container section_profile_form_container">
+						<form id="profile_update_form">
+							<label for="profile_update_names">
+								<input type="text" name="profile_update_names" id="profile_update_names" placeholder="Nombres">
+								<span class="error">Nombres</span>
+							</label>
+							<label for="profile_update_apellidos">
+								<input type="text" name="profile_update_apellidos" id="profile_update_apellidos" placeholder="Apellidos">
+								<span class="error">Apellidos</span>
+							</label>
+
+							<label for="profile_update_mobilephone">
+								<input type="text" name="profile_update_mobilephone" id="profile_update_mobilephone" placeholder="Telefono Celular">
+								<span class="error">Celular</span>
+							</label>
+							<label for="profile_update_calle">
+								<input type="text" name="profile_update_calle" id="profile_update_calle" placeholder="Calle">
+								<span class="error">ingresa tu Calle</span>
+							</label>
+							<label for="profile_update_numerocasa">
+								<input type="text" name="profile_update_numerocasa" id="profile_update_numerocasa" placeholder="Número de casa">
+								<span class="error">ingresa el número de tu casa</span>
+							</label>
+							<label for="profile_update_colonia">
+								<input type="text" name="profile_update_colonia" id="profile_update_colonia" placeholder="Colonia">
+								<span class="error">ingresa tu Colonia</span>
+							</label>
+
+							<label for="profile_update_cp">
+								<input type="text" name="profile_update_cp" id="profile_update_cp" placeholder="Código Postal">
+								<span class="error">ingresa tu Código Postal</span>
+							</label>
+							<label for="profile_update_ciudad">
+								<input type="text" name="profile_update_ciudad" id="profile_update_ciudad" placeholder="Ciudad">
+								<span class="error">ingresa tu Ciudad</span>
+							</label>
+							<label for="crear_gallery">
+								<select name="profile_update_estado" id="" class="profile_update_estado--select">
+									<option value="-1" selected>Coahuila</option>
+									<option value="54545">Chihuaua</option>
+									<option value="54545">Aguascalientes</option>
+									<option value="54545">Sonora</option>
+								</select>
+								<span class="error">Selecciona un Estado</span>
+							</label>
+							<a href="#" class="profile_update_button c-button">Actualizar 
+			 				</a>
+						</form>
+					</div><!-- section_profile_main-->
+				</div>
+				<div class="section_profile section_profile_pedidos section_profile--selected">
+					<div class="section_profile_pedidos_menu">
+						<a href="#" class="profile_pedidos_actualizar c-button">Actualizar mi información 
+		 				</a>
+					</div>
+					<div class="section_profile_pedidos_container section_profile_form_container">
+						
+
+					</div>
+				</div>
+			</div><!-- section_profile -->
 		</div>
 		<div class="global_footer">
 			<div class="footer_social">
@@ -449,6 +552,34 @@
 				</div>
 				<div class="c-cart_item_remove">
 					<a href="#" class="c-cart_item_remove_button c-button">Eliminar</a>
+				</div>
+			</div>
+		</div>
+	</script>
+	<script id="pedido-item-template" type="text/x-handlebars-template">
+		<div class="c-pedido_item" id="pedido_item_{{uid}}" data-uid={{uid}} data-price={{price}}>
+			<div class="c-cart_item_imagecontainer">
+				<img src="img/img_t/{{imagen}}" alt="" class="c-listado_item_image">
+			</div>
+			
+			<div class="c-cart_item_datacontainer">
+				
+				<div class="c-cart_item_description">
+					<p>{{brand}} </p>
+					<p>{{model}} </p>
+					<p>{{type}} </p>
+				</div>
+				<div class="c-cart_item_price">
+					<span>{{price}}</span>MX
+				</div>
+				<div class="c-cart_item_quantity">
+					<input type="text" value="1" />
+				</div>
+				<div class="c-cart_item_guia">
+					<p>Estatus {{estatus}} </p>
+				</div>
+				<div class="c-cart_item_guia">
+					<p>Guia {{type}} </p>
 				</div>
 			</div>
 		</div>
