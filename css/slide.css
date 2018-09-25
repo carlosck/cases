@@ -110,6 +110,9 @@
 	font-weight: 500;
 	background-image: url("../assets/images/slider/btn_transparent_base.png");
 	border-radius: 0;
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
 }
 .header_slide_button p{
 	margin-top: -7px;

@@ -19,7 +19,7 @@ document.cart_manager={
 		this.$btn_crear = $('.cart_empty_button',this.$container);
 		this.$resume_create_button = $('.cart_resume_create_button',this.$container);
 		this.$input_total = $('#cart_input_total',this.$container);
-
+		this.$cart_menu_itemcount = $('.main_menu_btn_itemcount');
 	},
 	bind(){
 		this.$btn_crear.on('click',function(event){
@@ -44,8 +44,7 @@ document.cart_manager={
 
 	},
 	init(){
-		
-		
+		this.loadData();		
 	},
 	initData(){
 		$(this.$loading).addClass(this.classSelected);	
@@ -58,8 +57,12 @@ document.cart_manager={
 			url: "service/load_cart.php",
 			dataType: "json"			
 		})
-		.done(function( obj_json ) {
-			console.log( "Data loaded: " , obj_json );			
+		.done(function( obj_json ) {			
+			if(obj_json.items.length>0){
+				this.$cart_menu_itemcount.addClass('visible');
+				this.$cart_menu_itemcount.html(obj_json.items.length);	
+			}
+						
 			this.showItems(obj_json.items);
 		}.bind(this));
 	},

@@ -235,7 +235,7 @@ body{
 	background-image: url('../assets/images/menu/carrito_14x13.png');
 	
 }
-.main_menu_btn_carrito .main_menu_btn_text{
+.main_menu_btn_carrito .main_menu_btn_itemcount{
 	width: 15px;
 	height: 15px;
 	background-color: #f7d05c;
@@ -247,6 +247,13 @@ body{
 	font-family: "msemibold";
 	font-size: 10px;
 	font-weight: 600;
+	opacity: 0;
+}
+.main_menu_btn_carrito .main_menu_btn_itemcount.visible{
+	opacity: 1;
+	-webkit-transition: opacity 1s;
+	-o-transition: opacity 1s;
+	transition: opacity 1s;
 }
 .main_menu_btn_login{
 	width: 30px;

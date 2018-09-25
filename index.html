@@ -35,7 +35,7 @@
 				<li>
 					<a class="main_menu_btn main_menu_btn_carrito" href="#" data-section="cart">
 						<span class="main_menu_icon carrito_ico"></span>
-						<p class="main_menu_btn_text">5</p>
+						<p class="main_menu_btn_itemcount">5</p>
 					</a>
 				</li>
 				<li>
@@ -355,10 +355,10 @@
 			</div>
 			<div class="section section_actived" id="section_profile">
 				
-				<div class="section_profile section_profile_loader">
+				<div class="section_profile section_profile--selected section_profile_loader">
 					<p>loading...</p>
 				</div>
-				<div class="section_profile section_profile_login section_profile--selected">
+				<div class="section_profile section_profile_login">
 					<div class="section_profile_login_container section_profile_form_container">
 						<form id="profile_login_form">
 							<label for="login_user">
@@ -369,16 +369,19 @@
 								<input type="password" name="login_pass" id="login_pass" placeholder="Password">							
 								<span class="error">Ingresa tu password</span>
 							</label>
-							<a href="#" class="login_button c-button">
+							<a href="#" class="send_ingresar_button c-button">
 			 					Ingresar
 			 				</a>
 			 				<a href="#" class="login_recuperar_button c-button">
 			 					Recuperar contraseña
 			 				</a>
+			 				<a href="#" class="login_register_button c-button">
+			 					Registrarse
+			 				</a>
 						</form>
 					</div>
 				</div>
-				<div class="section_profile section_profile_recuperar section_profile--selected">
+				<div class="section_profile section_profile_recuperar ">
 					<div class="section_profile_recuperar_container section_profile_form_container">
 						<form id="profile_recuperar_form">
 							<label for="recuperar_mail">
@@ -386,7 +389,7 @@
 								<span class="error">Ingresa tu correo</span>
 							</label>
 							
-							<a href="#" class="recuperar_button c-button">
+							<a href="#" class="send_recuperar_button c-button">
 			 					Recuperar
 			 				</a>
 			 				<a href="#" class="go_login_button c-button">
@@ -395,7 +398,7 @@
 						</form>
 					</div>
 				</div>
-				<div class="section_profile section_profile_register section_profile--selected">
+				<div class="section_profile section_profile_register ">
 					<div class="section_profile_register_container section_profile_form_container">
 						<form id="profile_register_form">
 							<label for="register_user">
@@ -455,11 +458,14 @@
 							</label>
 							<a href="#" class="profile_register_button c-button">Registrarse 
 			 				</a>
+			 				<a href="#" class="go_login_button c-button">
+			 					Login 
+			 				</a>
 						</form>
 					</div><!-- section_profile_main-->
 				</div>
 
-				<div class="section_profile section_profile_update section_profile--selected">
+				<div class="section_profile section_profile_update ">
 					<div class="section_profile_update_container section_profile_form_container">
 						<form id="profile_update_form">
 							<label for="profile_update_names">
@@ -510,7 +516,7 @@
 						</form>
 					</div><!-- section_profile_main-->
 				</div>
-				<div class="section_profile section_profile_pedidos section_profile--selected">
+				<div class="section_profile section_profile_pedidos ">
 					<div class="section_profile_pedidos_menu">
 						<a href="#" class="profile_pedidos_actualizar c-button">Actualizar mi información 
 		 				</a>
@@ -599,6 +605,7 @@
 	<script type="text/javascript" src="js/form_create_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/canvas_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/cart_manager.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/profile_manager.js" charset="utf-8"></script>
 	
 	<script type="text/javascript" src="js/crear.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/main.js" charset="utf-8"></script>
