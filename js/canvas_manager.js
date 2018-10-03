@@ -2,7 +2,7 @@ document.canvas_manager={
 		
 	constructor(_main){
 		this.main= _main;
-		console.log('this.main',this.main);
+		
 		this.cacheElements();
 		this.binding();
 		this.init();
@@ -15,7 +15,7 @@ document.canvas_manager={
 		this.$canvas = $("#crear_main_canvas");	
 		this.$restart = $("#crear_main_tools_restart");
 		this.$save = $("#crear_main_menufooter_buy");
-		console.log(this.$restart);
+		
 	},
 	binding(){
 		var that = this;
@@ -84,8 +84,7 @@ document.canvas_manager={
 			width: this.$canvas.width(),
 			height: this.$canvas.height()
 		};
-		var form_data = document.form_create_manager.getData();
-		console.log("form_data",form_data);
+		var form_data = document.form_create_manager.getData();		
 		
 		$.ajax({
 			method: "GET",

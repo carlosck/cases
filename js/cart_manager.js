@@ -75,7 +75,6 @@ document.cart_manager={
 			data: { uid: uid }			
 		})
 		.done(function( obj_json ) {
-			console.log( "Data loaded: " , obj_json );			
 			$('#car_item_'+uid,this.$cart_items_container).remove();
 			this.recalc();
 		}.bind(this));
@@ -84,7 +83,7 @@ document.cart_manager={
 	},
 	recalc(){
 		var total = 0;
-		console.log($('.c-cart_item',this.$cart_items_container));
+		
 		if($('.c-cart_item',this.$cart_items_container).length==0){
 
 		}		
@@ -101,12 +100,10 @@ document.cart_manager={
 	showItems(items)
 	{
 				
-		var source   = this.$cart_items_template[0].innerHTML;
-		console.log(source);
+		var source   = this.$cart_items_template[0].innerHTML;		
 		var template = Handlebars.compile(source);
 
-		this.$cart_items_container.html("");
-		console.log(items);
+		this.$cart_items_container.html("");		
 		var total = 0;
 		if(items.length>0)
 		{

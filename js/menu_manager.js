@@ -1,8 +1,7 @@
 document.menu_manager={
 		
 	constructor(_main){		
-		this.main= _main;
-		console.log(_main);
+		this.main= _main;		
 		this.cacheElements();		
 		this.bind();
 		this.init();

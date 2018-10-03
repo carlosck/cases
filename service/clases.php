@@ -44,13 +44,15 @@ echo "modifico ".$instancia->cuantos_M()." registros";
 	function __construct($q,$link){	         	 
 			 $this->q=$q;
 			 $this->db=$link;
+			/*
 			 if(!$this->res=$this->db->query($q))
 			 {
 			 	printf("Error: %s\n",$this->db->error);
 			 }
-			 // if (!mysqli_query($this->db, $this->q)) {
-			 //     printf("Errormessage: %s\n", mysqli_error($db));
-			 // }
+			 */
+			  if (!$this->res=mysql_query( $this->q,$this->db)) {
+			     printf("Errormessage: %s\n", mysql_error());
+			  }
 			 //if(!$this->res=mysqli_query($db,$this->q))
 		//	if(!$this->res=mysql_query($q))
 
@@ -61,7 +63,7 @@ echo "modifico ".$instancia->cuantos_M()." registros";
 	function query($qq){
 	        
 	       // echo "q ".$this->q;
-	         if(!$this->res=mysqli_query($this->db,$qq)){
+	         if(!$this->res=mysql_query($qq)){
 	         	//printf("Errormessage: %s\n", mysqli_error($link)
 			    throw new Exception("error en la bd ".' por '.$qq.mysql_error(),002);
 			
@@ -80,11 +82,11 @@ echo "modifico ".$instancia->cuantos_M()." registros";
 	
 	// metodo para sacar una sola matriz asociativa
 	function sacar_U(){
-	         $this->m=mysqli_fetch_array($this->db,$this->res);
+	         $this->m=mysql_fetch_array($this->res);
 	         }
 	// metodo para sacar una matriz asociativa en while 
 	function sacar_V(){
-	        if($this->m=mysqli_fetch_array($this->res,MYSQLI_ASSOC))
+	        if($this->m=mysql_fetch_array($this->res,MYSQLI_ASSOC))
 			   return(true);
 			 else
 			   return(false);

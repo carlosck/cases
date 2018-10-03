@@ -385,7 +385,7 @@
 					<div class="section_profile_recuperar_container section_profile_form_container">
 						<form id="profile_recuperar_form">
 							<label for="recuperar_mail">
-								<input type="text" name="recuperar_mail" id="recuperar_mail" placeholder="correo">
+								<input type="text" class="validator_mail" name="recuperar_mail" id="recuperar_mail" placeholder="correo">
 								<span class="error">Ingresa tu correo</span>
 							</label>
 							
@@ -402,53 +402,53 @@
 					<div class="section_profile_register_container section_profile_form_container">
 						<form id="profile_register_form">
 							<label for="register_user">
-								<input type="text" name="register_mail" id="register_mail" placeholder="correo">							
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_mail" id="profile_register_mail" placeholder="correo">							
 								<span class="error">Ingresa tu correo</span>
 							</label>
-							<label for="register_pass">
-								<input type="password" name="register_pass" id="register_pass" placeholder="Password">							
+							<label for="profile_register_pass">
+								<input type="password" class="validator_pass" data-validator-len="5" name="profile_register_pass" id="profile_register_pass" placeholder="Password">							
 								<span class="error">Ingresa tu password</span>
 							</label>
-							<label for="register_repass">
-								<input type="password" name="register_repass" id="register_repass" placeholder="Confirma tu Password">							
+							<label for="profile_register_repass">
+								<input type="password" class="validator_pass" data-validator-len="5" name="profile_register_repass" id="profile_register_repass" placeholder="Confirma tu Password">							
 								<span class="error">Confirma tu password</span>
 							</label>
 							<label for="profile_register_names">
-								<input type="text" name="profile_register_names" id="profile_register_names" placeholder="Nombres">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_names" id="profile_register_names" placeholder="Nombres">
 								<span class="error">Nombres</span>
 							</label>
 							<label for="profile_register_apellidos">
-								<input type="text" name="profile_register_apellidos" id="profile_register_apellidos" placeholder="Apellidos">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_apellidos" id="profile_register_apellidos" placeholder="Apellidos">
 								<span class="error">Apellidos</span>
 							</label>
 
 							<label for="profile_register_mobilephone">
-								<input type="text" name="profile_register_mobilephone" id="profile_register_mobilephone" placeholder="Telefono Celular">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_mobilephone" id="profile_register_mobilephone" placeholder="Telefono Celular">
 								<span class="error">Celular</span>
 							</label>
 							<label for="profile_register_calle">
-								<input type="text" name="profile_register_calle" id="profile_register_calle" placeholder="Calle">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_calle" id="profile_register_calle" placeholder="Calle">
 								<span class="error">ingresa tu Calle</span>
 							</label>
 							<label for="profile_register_numerocasa">
-								<input type="text" name="profile_register_numerocasa" id="profile_register_numerocasa" placeholder="Número de casa">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_numerocasa" id="profile_register_numerocasa" placeholder="Número de casa">
 								<span class="error">ingresa el número de tu casa</span>
 							</label>
 							<label for="profile_register_colonia">
-								<input type="text" name="profile_register_colonia" id="profile_register_colonia" placeholder="Colonia">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_colonia" id="profile_register_colonia" placeholder="Colonia">
 								<span class="error">ingresa tu Colonia</span>
 							</label>
 
 							<label for="profile_register_cp">
-								<input type="text" name="profile_register_cp" id="profile_register_cp" placeholder="Código Postal">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_cp" id="profile_register_cp" placeholder="Código Postal">
 								<span class="error">ingresa tu Código Postal</span>
 							</label>
 							<label for="profile_register_ciudad">
-								<input type="text" name="profile_register_ciudad" id="profile_register_ciudad" placeholder="Ciudad">
+								<input type="text" class="validator_text" data-validator-len="5" name="profile_register_ciudad" id="profile_register_ciudad" placeholder="Ciudad">
 								<span class="error">ingresa tu Ciudad</span>
 							</label>
-							<label for="crear_gallery">
-								<select name="profile_register_estado" id="" class="profile_register_estado--select">
+							<label for="profile_register_estado">
+								<select name="profile_register_estado" id="profile_register_estado" class="validator_select">
 									<option value="-1" selected>Coahuila</option>
 									<option value="54545">Chihuaua</option>
 									<option value="54545">Aguascalientes</option>
@@ -600,12 +600,16 @@
 	<script type="text/javascript" src="js/libs/jquery-ui.min.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/libs/jquery.ui.rotatable.min.js" charset="utf-8"></script>
 	
+	<script type="text/javascript" src="js/helpers/form_validator.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/header_slide.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/menu_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/form_create_manager.js" charset="utf-8"></script>
+	<script type="text/javascript" src="js/form_register_manager.js" charset="utf-8"></script>
+	
 	<script type="text/javascript" src="js/canvas_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/cart_manager.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/profile_manager.js" charset="utf-8"></script>
+	
 	
 	<script type="text/javascript" src="js/crear.js" charset="utf-8"></script>
 	<script type="text/javascript" src="js/main.js" charset="utf-8"></script>

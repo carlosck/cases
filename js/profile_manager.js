@@ -6,8 +6,8 @@ document.profile_manager={
 		this.cacheElements();
 		this.binding();
 		this.init();		
-
-		document.form_create_manager.constructor();
+		
+		document.form_register_manager.constructor(this);
 	},
 	cacheElements(){
 		//*/
@@ -23,6 +23,7 @@ document.profile_manager={
 		this.$recuperar_btn = $(".login_recuperar_button",this.$container);
 		this.$register_btn = $(".login_register_button",this.$container);
 		this.$login_btn = $(".go_login_button",this.$container);
+		this.$register_send_btn = $(".profile_register_button",this.$container);
 		
 		//*/
 	},
@@ -48,7 +49,7 @@ document.profile_manager={
 		this.$login_btn.on('click',function(event){
 			event.preventDefault();
 			that.showLogin();
-		});
+		});		
 		
 		//*/
 	},
