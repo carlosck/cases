@@ -39,6 +39,7 @@ var rw={
 	document.crear.constructor(this);
 	document.menu_manager.constructor(this);	
 	document.cart_manager.constructor(this);	
+	document.profile_holder.constructor(this);	
 	document.profile_manager.constructor(this);	
 	},
 	hideAllSection(){
@@ -77,7 +78,10 @@ var rw={
 				this.gotoProfile();
 			break;
 		}
-	}
+	},
+	profileLoaded(_profile){
+		document.profile_holder.setProfile(_profile);
+	}	
 	
 }
 

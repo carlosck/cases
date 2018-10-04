@@ -33,5 +33,7 @@ else{
 	$q_insert = 'insert into users(`correo`, `pass`, `nombres`, `apellidos`, `celular`, `calle`, `numero`, `colonia`, `cp`, `ciudad`, `estado`,  `estatus`)values';
 	$q_insert.='("'.$correo.'","'.$pass.'","'.$names.'","'.$apellidos.'","'.$mobilephone.'","'.$calle.'","'.$numerocasa.'","'.$colonia.'","'.$cp.'","'.$ciudad.'","'.$estado.'",1)';	
 	$con->query($q_insert);
-	echo json_encode(['estatus'=>'done']);
+	$id = $con->last_insert();
+	$_SESSION['id_user']=$id;
+	echo json_encode(['estatus'=>'done','message'=>$id]);
 }

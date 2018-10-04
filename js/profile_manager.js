@@ -71,7 +71,16 @@ document.profile_manager={
 			if(obj_json.user=='none')
 			{
 				this.$login_section.addClass('section_profile--selected');
-
+			}
+			else{
+				if(obj_json.action=='done'){
+					this.main.profileLoaded(obj_json);	
+					this.$pedidos.addClass('section_profile--selected');
+				}
+				else{
+					this.$login_section.addClass('section_profile--selected');
+				}
+				
 			}
 		}.bind(this));
 		
@@ -90,9 +99,11 @@ document.profile_manager={
 		this.$update.addClass('section_profile--selected');
 	},
 	showLogin(){
-		console.log('showLogin');
 		$('.section_profile',this.container).removeClass('section_profile--selected');
-		this.$login_section.addClass('section_profile--selected');
-		console.log('this.$login_section',this.$login_section);
-	},	
+		this.$login_section.addClass('section_profile--selected');		
+	},
+	showPedidos(){
+		$('.section_profile',this.container).removeClass('section_profile--selected');
+		this.$pedidos.addClass('section_profile--selected');	
+	}	
 };

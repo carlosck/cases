@@ -53,7 +53,7 @@ document.form_register_manager={
 			data: form_data
 		})
 		.done(function( obj_json ) {			
-			this.main.gotoCart();
+			this.main.gotoProfile();
 		}.bind(this));
 	},
 	getData(){
