@@ -23,8 +23,8 @@ if(isset($_SESSION['id_user']))
 		'estado'=> $con->m['estado'],
 		'estatus'=> $con->m['estatus']
 	];
-	echo json_encode(['action'=>'done','items'=>$items]);
+	echo json_encode(['action'=>'loged','items'=>$items]);
 }
 else{
-	echo json_encode(['action'=>'error']);
+	echo json_encode(['action'=>'nologed']);
 }

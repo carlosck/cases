@@ -68,12 +68,12 @@ document.profile_manager={
 		.done(function( obj_json ) {			
 			console.log('obj_json',obj_json);
 			this.$loader.removeClass('section_profile--selected');
-			if(obj_json.user=='none')
+			if(obj_json.user=='nologed')
 			{
 				this.$login_section.addClass('section_profile--selected');
 			}
 			else{
-				if(obj_json.action=='done'){
+				if(obj_json.action=='loged'){
 					this.main.profileLoaded(obj_json);	
 					this.$pedidos.addClass('section_profile--selected');
 				}
