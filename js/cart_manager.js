@@ -134,21 +134,23 @@ document.cart_manager={
 		
 	},
 	gotoPay(){
-		console.log('document.profile_holder.isLoged',document.profile_holder.isLoged())
-		if(document.profile_holder.isLoged()){
-			$('.c-cart_item',this.$cart_items_container).each(function(index,element){
-				console.log('element',element);
-				var price= $(element).data('price');
-				var quantity = 	$(element).find('.c-cart_item_quantity input').val();
-				
-				total+=	price* quantity;	
+		var items = [];
+		$('.c-cart_item',this.$cart_items_container).each(function(index,element){
+			console.log('element',element);
+			var item={};
+			item.brand= $(element).data('brand');
+			item.model= $(element).data('model');
+			item.type= $(element).data('type');
+			item.price= $(element).data('price');
+			item.quantity = $(element).find('.c-cart_item_quantity input').val();
+			
+			items.push(item)
 
-			}.bind(this));
-		}
-		else{
-			document.profile_holder.setWaitingForLogin(true);
-			this.main.gotoProfile();
-		}
+		}.bind(this));
+		this.main.setPedidos();
+		
+		
+		
 	}
 
 }

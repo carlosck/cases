@@ -18,6 +18,7 @@ document.profile_manager={
 		this.$register = $(".section_profile_register",this.$container);
 		this.$update = $(".section_profile_update",this.$container);
 		this.$pedidos = $(".section_profile_pedidos",this.$container);
+		this.$home = $(".section_profile_home",this.$container);
 		
 		this.$ingresar_btn = $(".login_ingresar_button",this.$container);
 		this.$recuperar_btn = $(".login_recuperar_button",this.$container);
@@ -75,12 +76,11 @@ document.profile_manager={
 			else{
 				if(obj_json.action=='loged'){
 					this.main.profileLoaded(obj_json);	
-					this.$pedidos.addClass('section_profile--selected');
+					this.$home.addClass('section_profile--selected');
 				}
 				else{
 					this.$login_section.addClass('section_profile--selected');
 				}
-				
 			}
 		}.bind(this));
 		
@@ -105,5 +105,45 @@ document.profile_manager={
 	showPedidos(){
 		$('.section_profile',this.container).removeClass('section_profile--selected');
 		this.$pedidos.addClass('section_profile--selected');	
-	}	
+	},
+	setPedidos(_pedidos){
+		console.log('document.profile_holder.isLoged',document.profile_holder.isLoged())
+		if(document.profile_holder.isLoged()){
+			
+		}
+		else{
+			document.profile_holder.setWaitingForLogin(true);
+			this.showPedidosItemsTemporal(_pedidos);			
+		}
+	},
+	showPedidosItemsNoLoged(items)
+	{
+				
+		var source   = this.$cart_items_template[0].innerHTML;		
+		var template = Handlebars.compile(source);
+
+		this.$cart_items_container.html("");		
+		var total = 0;
+		if(items.length>0)
+		{
+			for(var i = 0; i<items.length;i++){				
+				var item = items[i];
+				var html    = template(item);				
+				this.$cart_items_container.append(html);
+				total+=item.price;
+			}
+			this.$input_total.val(total);
+			this.$loading.removeClass(this.classSelected);	
+			this.$cart_items_empty.removeClass(this.classSelected);	
+			this.$cart_items_stage.addClass(this.classSelected);	
+		}
+		else{
+			this.$loading.removeClass(this.classSelected);	
+			this.$cart_items_stage.removeClass(this.classSelected);
+			this.$cart_items_empty.addClass(this.classSelected);	
+		}
+
+		
+		
+	},	
 };

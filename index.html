@@ -514,13 +514,18 @@
 						</form>
 					</div><!-- section_profile_main-->
 				</div>
-				<div class="section_profile section_profile_pedidos ">
+				
+				<div class="section_profile section_profile_home">
 					<div class="section_profile_pedidos_menu">
 						<a href="#" class="profile_pedidos_actualizar c-button">Actualizar mi información 
 		 				</a>
 					</div>
+					
+				</div>
+				<div class="section_profile section_profile_pedidos ">
+					<h1>Historial de Pedidos </h1>
 					<div class="section_profile_pedidos_container section_profile_form_container">
-						<h1>Historial de Pedidos </h1>
+						
 
 					</div>
 				</div>
@@ -536,7 +541,7 @@
 	</div>
 
 	<script id="cart-item-template" type="text/x-handlebars-template">
-		<div class="c-cart_item" id="car_item_{{uid}}" data-uid={{uid}} data-price={{price}}>
+		<div class="c-cart_item" id="car_item_{{uid}}" data-uid={{uid}} data-price={{price}} data-brand={{brand}} data-model={{model}} data-type={{type}}>
 			<div class="c-cart_item_imagecontainer">
 				<img src="img/img_t/{{imagen}}" alt="" class="c-listado_item_image">
 			</div>

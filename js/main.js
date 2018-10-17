@@ -81,6 +81,11 @@ var rw={
 	},
 	profileLoaded(_profile){
 		document.profile_holder.setProfile(_profile);
+	},
+	setPedidos(_pedidos)
+	{
+		this.profile_manager.setPedidos(_pedidos);
+		this.gotoProfile();
 	}	
 	
 }

@@ -1,7 +1,7 @@
 document.form_register_manager={
 		
 	constructor(_parent){
-		this.parent= _parent;
+		this.main= _parent;
 
 		this.cacheElements();
 		this.bind();		
