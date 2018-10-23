@@ -51,7 +51,7 @@
 				<div id="header_slide">
 					<div class="header_slide_container">
 						<div class="slider_mask">
-							<div class="header_slide_item slider_no_1 slider__item">
+							<!-- <div class="header_slide_item slider_no_1 slider__item">
 								<div class="header_slide_bg"></div>
 								<div class="header_slide_case"></div>					
 							</div>
@@ -62,7 +62,7 @@
 							<div class="header_slide_item slider_no_3 slider__item">
 								<div class="header_slide_bg"></div>
 								<div class="header_slide_case"></div>
-							</div>
+							</div> -->
 						</div>
 
 					</div>
@@ -539,7 +539,13 @@
 			</div>
 		</div>
 	</div>
-
+	
+	<script id="slide-item-template" type="text/x-handlebars-template">
+		<div class="header_slide_item slider__item {{classe_selected}} slider_no_{{cont}}">
+			<div class="header_slide_bg" style="background-image: url('assets/images/slider/{{bg}}')"></div>
+			<div class="header_slide_case" style="background-image: url('assets/images/slider/{{case}}')"></div>					
+		</div>
+	</script>
 	<script id="cart-item-template" type="text/x-handlebars-template">
 		<div class="c-cart_item" id="car_item_{{uid}}" data-uid={{uid}} data-price={{price}} data-brand={{brand}} data-model={{model}} data-type={{type}}>
 			<div class="c-cart_item_imagecontainer">

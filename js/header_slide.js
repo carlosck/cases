@@ -17,8 +17,9 @@ document.headerSlide={
 		this.activeTl= null;
 		this.lock= false;
 		this.cacheElements();		
+		this.loadSlide();
 		this.bind();
-		this.init();
+		
 	},
 
 	cacheElements(){
@@ -30,6 +31,8 @@ document.headerSlide={
 		this.$board_left= $(".board_left",this.$container);
 		this.slide=$("#header_slide");
 		this.$slides={};
+
+		this.$slide_items_template = $('#slide-item-template');
 		return this;
 	},
 	bind(){
@@ -69,7 +72,7 @@ document.headerSlide={
 		if (this.$container.length === 0) return false;
 		// Define $slides
 		this.$slides = $('.'+this.opts.cssClasses.defaultSlide, this.$container);
-
+		console.log('this.$slides',this.$slides);
 		let { cssClasses, $container } = this.opts;
 
 		            // Abort if there's no slider
@@ -398,6 +401,40 @@ document.headerSlide={
 		this.$slides.each((index, slide) => {
 			$(slide).attr('data-slide-index', index);
 		});
+	},
+	loadSlide(){
+		$.ajax({
+			method: "GET",
+			url: "service/load_slider.php",
+			dataType: "json"			
+		})
+		.done(function( obj_json ) {			
+			if(obj_json.action=='done'){
+				this.showSlide(obj_json.items);
+			}
+									
+		}.bind(this));
+	},
+	showSlide(_items){
+		var source   = this.$slide_items_template[0].innerHTML;		
+		var template = Handlebars.compile(source);
+
+		this.$slider_container.html("");
+
+		var selected= true;
+		var cont =1;
+		for(let  itemKey in _items){				
+			var item = _items[itemKey];
+			console.log('item',item);
+			item.classe_selected= selected ? 'slider__item--active': '';
+			item.cont= cont;
+			cont++;
+			selected = false;
+			var html    = template(item);
+			this.$slider_container.append(html);				
+		}
+		this.init();
+		console.log(this.$slider_container);
 	}
 }
 
