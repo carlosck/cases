@@ -41,6 +41,7 @@ var rw={
 	document.cart_manager.constructor(this);	
 	document.profile_holder.constructor(this);	
 	document.profile_manager.constructor(this);	
+	document.form_create_manager.constructor();
 	},
 	hideAllSection(){
 		$('.section').removeClass(this.classSectionActive);

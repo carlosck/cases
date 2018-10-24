@@ -7,8 +7,7 @@ document.canvas_manager={
 		this.binding();
 		this.init();
 		this.count=0;
-
-		document.form_create_manager.constructor();
+		
 	},
 	cacheElements(){
 		this.$container = $(".crear_main_canvas_container",this.$container);

@@ -424,8 +424,7 @@ document.headerSlide={
 		var selected= true;
 		var cont =1;
 		for(let  itemKey in _items){				
-			var item = _items[itemKey];
-			console.log('item',item);
+			var item = _items[itemKey];			
 			item.classe_selected= selected ? 'slider__item--active': '';
 			item.cont= cont;
 			cont++;
